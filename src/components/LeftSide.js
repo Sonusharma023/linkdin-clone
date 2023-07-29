@@ -60,17 +60,9 @@ const LeftSide = (props) => {
   )
 }
 const Container = styled.div`
-grid-area: leftside;
+grid-area: 1/1;
 width: 100%;
 height: 100%;
-
-@media (max-width:1008px) {
-grid-area: 1/1;
-}
-
-@media (max-width:768px) {
-/* display: none; */
-}
 `;
 const Feed1 = styled.div`
 background-color: #FFFFFF;
@@ -78,6 +70,7 @@ box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.09);
    border-radius: 8px;
 position: relative;
 margin-bottom: 12px;
+
   .info{
 
   background-image: url("./images/left-side.png");
@@ -214,7 +207,12 @@ const Feed2 = styled.div`
 background-color: #FFFFFF;
    border-radius: 8px;
    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.09);
+   position: sticky;
+top: 70px;
 
+@media screen and (max-width:768px){
+  position: unset;
+}
 `;
 
 const Group = styled.div`

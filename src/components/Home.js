@@ -1,33 +1,37 @@
 
 import  styled  from "styled-components";
-import Header from "./Header";
 import LeftSide from "./LeftSide";
 import Main from "./Main";
 import Rightside from "./Rightside";
+import Header from './Header';
 // import { Navigate } from "react-router-dom";
 // import {connect } from "react-redux";
 
 const Home = (props) => {
+
   return <>
-    <Header />
+     <Header />
      <Container>
+
      {/* {props.user && <Navigate to="/" />} */}
       <Section>
         <h5><a href="/">Hiring in a hurry? - </a></h5>
         <p>Find talented pros in record time with Upwork and keep business moiving.</p>
       </Section>
       <Layout>
-        <LeftSide />
+       <LeftSide />
         <Main />
-        <Rightside />
+      <Rightside />
       </Layout>
      </Container>
     </>
 }
 
 const Container  = styled.div`
+/* position: relative; */
 padding-top: 52px;
-max-width: 100%;
+width: 100%;
+max-width: 1440px;
 background-color: #F3F2EF;
 
 @media (max-width:768px) {
@@ -73,6 +77,7 @@ p{
 `;
 
 const Layout  = styled.div`
+/* position: relative; */
 width: 100%;
 max-width: 1128px;
 height: auto;
@@ -83,6 +88,7 @@ column-gap: 25px;
 row-gap: 25px;
 grid-template-rows: auto;
 margin: 0 auto;
+
 
 @media (max-width:1200px) {
   width: 100%;

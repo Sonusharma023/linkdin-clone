@@ -8,6 +8,7 @@ import ReactPlayer from "react-player";
 const Main = (props) => {
   const[data, setData]= useState(false);
   const[showModal, setShowModal]= useState("close");
+  const [likesCount, setLikesNumber] = useState(0);
 
   useEffect(() => {
 		props.getArticles();
@@ -78,11 +79,10 @@ const Main = (props) => {
     <span>Sort by:</span>
 </div>
       <Dropdown>
-              <a  href="/">
                 <span onClick={()=> setData(!data)}>Top
                   <img src="./images/down-icon.svg" alt="vetor_img" />
                 </span>
-              </a>
+
 
               <div className={data ? "Top active": "Top"}>
               <NavList>
@@ -117,11 +117,11 @@ const Main = (props) => {
     </Box>
 
     <Box>
-      <img src="./images/user.svg" alt="group_img"/>
+      <img src="./images/cipla.webp" alt="group_img"/>
     
      <Col>
-      <h2>Adani Group</h2>
-      <p>Growth with Goodness</p>
+      <h2>Cipla</h2>
+      <p>Company Pharmaceuticals</p>
       <span>
       <img src="./images/path.png" alt="follow_img"/>
       People pages to follow</span>
@@ -134,11 +134,11 @@ const Main = (props) => {
     </Box>
 
     <Box>
-      <img src="./images/user.svg" alt="group_img"/>
+      <img src="./images/Tata.webp" alt="group_img"/>
     
      <Col>
-      <h2>Adani Group</h2>
-      <p>Growth with Goodness</p>
+      <h2>Tata Projects</h2>
+      <p>Simplify.Create</p>
      </Col>
 
      <div className="col2">
@@ -178,10 +178,10 @@ const Main = (props) => {
          <ReactPlayer width={"100%"} url={article.video} />
           : article.sharedImg && <img src={article.sharedImg} alt="main-banner_img" />}</a>
         </SharedImage>
-        <div className="like">75</div>
+        <div className="like"><img src="./images/likes.png" /> <img src="./images/dil.png" /> . comments</div>
 
         <div className="last">
-          <span>
+          <span onClick={() => setLikesNumber(likesCount + 1)}>
           <img src="./images/like.png" alt="item_img" style={{transform: "translateY(-3px)"}} />
            Like
           </span>
@@ -501,6 +501,15 @@ background-color: #F9FAFB;
 border-radius: 8px;
 box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.09);
 margin-bottom: 10px;
+
+ .like{
+display: flex;
+align-items: center;
+   img{
+    width: 12px;
+    height: 12px;
+   }
+ }
 .img{
   width: 100%;
   height: 290px;

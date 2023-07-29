@@ -70,7 +70,8 @@ const Rightside = () => {
         </div>
       </div>
 
-      <Img>
+ <div className="collect">
+ <Img>
         <img src="./images/See.png" alt="" />
       </Img>
 
@@ -88,6 +89,7 @@ const Rightside = () => {
       </Feed2>
 
       <p className="last-line"><img src="./images/login-logo.svg" alt="logo" /> LinkedIn Corporation © 2023</p>
+ </div>
 
     </Container>
   )
@@ -96,9 +98,8 @@ const Container = styled.div`
 grid-area: rightside;
 width: 100%;
 height: 100%;
-
-@media (max-width:1008px) {
-grid-area: 2/2;
+@media screen and (max-width:1008px){
+  grid-area: 2/2;
 }
 
 
@@ -108,6 +109,14 @@ grid-area: 2/2;
       border-radius: 8px;
       border-bottom: 1.5px solid rgba(0,0,0,0.09) ;
     }
+    .collect{
+  position: sticky;
+top: 57px;
+
+@media screen and (max-width:1008px){
+  position: unset;
+}
+}
 
  .right-name{
   display: flex;
